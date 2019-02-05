@@ -4,6 +4,7 @@ import { DateRangePicker } from 'react-dates';
 import { setTextFilter, setStartDate, setEndDate } from '../actions/filters';
 
 
+
 class LinkListFilters extends React.Component {
     state = {
         calendarFocused: null
@@ -31,7 +32,9 @@ class LinkListFilters extends React.Component {
                 </select>
                 <DateRangePicker
                     startDate={this.props.filters.startDate}
+                    startDateId={"start"}
                     endDate={this.props.filters.endDate}
+                    endDateId={"end"}
                     onDatesChange={this.onDatesChange}
                     focusedInput={this.state.calendarFocused}
                     onFocusChange={this.onFocusChange}

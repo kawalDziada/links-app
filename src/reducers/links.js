@@ -20,6 +20,8 @@ export default (state = linksReducerDefaultState, action) => {
                     return link;
                 }
             });
+        case 'SET_LINKS':
+            return action.links;
         default:
             return state; 
     }
