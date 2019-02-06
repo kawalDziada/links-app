@@ -28,11 +28,27 @@ export const removeLink = ({id } = {}) => ({
     id
 });
 
+export const startRemoveLink = ({id } = {}) => {
+    return (dispatch) => {
+        return database.ref(`links/${id}`).remove().then(() => {
+            dispatch(removeLink({ id }));
+        });
+    };
+};
+
 export const editLink = (id, updates) => ({
     type: 'EDIT_LINK',
     id,
     updates
 });
+
+export const startEditLink = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`links/${id}`).update(updates).then(() => {
+            dispatch(editLink(id, updates));
+        })
+    }
+};
 
 export const setLinks = (links) => ({
     type: 'SET_LINKS',
