@@ -7,14 +7,15 @@ export const addLink = (link) => ({
 });
 
 export const startAddLink = (linkData = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const {
             adress = '', 
             description = '', 
             createdAt = 0
         } = linkData;
         const link = {adress, description, createdAt};
-        return database.ref('links').push(link).then((ref) => {
+        return database.ref(`users/${uid}/links`).push(link).then((ref) => {
             dispatch(addLink({
                 id: ref.key,
                 ...link
@@ -29,8 +30,9 @@ export const removeLink = ({id } = {}) => ({
 });
 
 export const startRemoveLink = ({id } = {}) => {
-    return (dispatch) => {
-        return database.ref(`links/${id}`).remove().then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/links/${id}`).remove().then(() => {
             dispatch(removeLink({ id }));
         });
     };
@@ -43,8 +45,9 @@ export const editLink = (id, updates) => ({
 });
 
 export const startEditLink = (id, updates) => {
-    return (dispatch) => {
-        return database.ref(`links/${id}`).update(updates).then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/links/${id}`).update(updates).then(() => {
             dispatch(editLink(id, updates));
         })
     }
@@ -56,8 +59,9 @@ export const setLinks = (links) => ({
 });
 
 export const startSetLinks = () => {
-    return (dispatch) => {
-        return database.ref('links').once('value').then((snapshot) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/links`).once('value').then((snapshot) => {
             const links = [];
             snapshot.forEach((childSnapshot) => {
                 links.push({
