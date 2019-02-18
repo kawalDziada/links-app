@@ -40,25 +40,25 @@ export default class LinkForm extends React.Component {
   };
   render() {
     return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmit}>
-            <input 
-                type='text'
-                placeholder='Adress'
-                autoFocus
-                value={this.state.adress}
-                onChange={this.onAdressChange}
-            />
-            <textarea
-                placeholder='Add description for your link'
-                value={this.state.description}
-                onChange={this.onDescriptionChange}
-            >
-            </textarea>
-            <button>Add Link</button>
-        </form>
-      </div>
+      <form className="form" onSubmit={this.onSubmit}>
+          {this.state.error && <p className="form__error">{this.state.error}</p>}
+          <input 
+              className="text-input"
+              type='text'
+              placeholder='Adress'
+              autoFocus
+              value={this.state.adress}
+              onChange={this.onAdressChange}
+          />
+          <textarea
+              className="textarea"
+              placeholder='Add description for your link'
+              value={this.state.description}
+              onChange={this.onDescriptionChange}
+          >
+          </textarea>
+          <button className="button button-big__form">Add Link</button>
+      </form>
     )
   }
 }

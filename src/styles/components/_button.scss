@@ -1,0 +1,40 @@
+.button {
+    background: $blue;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: $font-size-large;
+    font-weight: 300;
+    padding: $s-size;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.button-big {
+    text-align: center;
+    display: block;
+    width: 100vw;
+}
+
+.button-big__form {
+    text-align: center;
+    display: block;
+}
+
+.button-link {
+    background: none;
+}
+
+.button-edit {
+   display: block;
+   //text-decoration: none;
+}
+
+.srink {
+    text-decoration: none;
+}
+
+.button-remove-div {
+    display: flex;
+    flex-direction: column;
+}

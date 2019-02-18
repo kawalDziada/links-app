@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter.js';
 import configureStore from './store/configureStore';
-import './styles/base.scss';
+import './styles/styles.scss';
 import { firebase } from './firebase/firebase';
 import { startSetLinks } from './actions/links';
 import { login, logout } from './actions/auth';

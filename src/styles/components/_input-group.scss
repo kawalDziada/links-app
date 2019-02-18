@@ -1,0 +1,21 @@
+.input-group {
+    display: flex;
+    //margin-bottom: $m-size;
+    flex-direction: column;
+    //background-color: #f7f7f7;
+    //margin-bottom: $l-size;
+    padding: $l-size 0;
+    //justify-content: flex-start;
+    @media (min-width: $desktop-breakpoint) {
+        flex-direction: row;
+        //margin-bottom: $l-size;
+    }
+}
+
+.input-group__item {
+    margin-right: $s-size;
+    @media (min-width: $desktop-breakpoint) {
+        margin-right: $m-size;
+        margin: 0 $s-size 0 0;
+    }
+}

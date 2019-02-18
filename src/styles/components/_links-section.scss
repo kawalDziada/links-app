@@ -1,0 +1,34 @@
+.linksWraper {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.link {
+    color: $grey;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid darken($off-white, 7%);
+    width: 45%;
+    margin-bottom: 1em;
+    text-align: center;
+    padding: 1em 1em 0 1em;
+    transition: background .3s ease;
+    &:hover {
+        background: $off-white;
+    }
+}
+
+@media(max-width: 420px) {
+    .link {
+        width: 100%;
+        //padding: 0;
+    }
+}
+
+.adress {
+    text-decoration: none;
+    color: $dark-grey;
+    font-weight: bold;
+}

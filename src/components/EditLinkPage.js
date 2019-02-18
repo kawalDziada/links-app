@@ -5,7 +5,10 @@ import { startRemoveLink, startEditLink } from '../actions/links';
 
 const EditLinkPage = (props) => {
   return (
-    <div>
+    <div className="content-container">
+      <div className="subtitle-container">
+        <h1 className="page-header__title">Edit Link:</h1>
+      </div>
       <LinkFrom 
         link={props.link}
         onSubmit={(link) => {
@@ -13,10 +16,12 @@ const EditLinkPage = (props) => {
           props.history.push('/');
         }}
       />
-      <button onClick={() => {
+      <div className="button-remove-div">
+      <button className="button button-big__form" onClick={() => {
         props.dispatch(startRemoveLink({id: props.link.id}));
         props.history.push('/');
       }}>Remove</button>
+      </div>
     </div>
   );
 };
