@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "4.2.0",
-    "history": "4.7.2",
+    "history": "4.10.0",
     "moment": "2.18.1",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
