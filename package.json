@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "firebase": "4.2.0",
+    "firebase": "7.19.1",
     "history": "4.7.2",
     "moment": "2.18.1",
     "node-sass": "^4.11.0",
